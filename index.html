@@ -13,10 +13,10 @@
     <form>
         <label for="roast-selection"> Roast</label>
         <select id="roast-selection" class="form-select active" aria-label="Default select example">
-            <option selected> All</option>
-            <option value="1"> Light</option>
-            <option value="2"> Medium</option>
-            <option value="3"> Dark</option>
+            <option value="all" selected> all</option>
+            <option value="light"> light</option>
+            <option value="medium"> medium</option>
+            <option value="dark"> dark</option>
         </select>
 
         <div class="mb-3">
@@ -32,9 +32,9 @@
     <form>
         <label> Roast</label>
         <select class="form-select active" aria-label="Default select example">
-            <option selected> Light</option>
-            <option value="1"> Medium</option>
-            <option value="2"> Dark</option>
+            <option selected> light</option>
+            <option value="1"> medium</option>
+            <option value="2"> dark</option>
         </select>
 
         <div class="mb-3">
@@ -47,8 +47,7 @@
     </form>
 
     <div>
-       <ul id="coffees"></ul>
-        <li></li>
+       <p id="coffees"></p>
     </div>
 
     <script src="main.js"></script>
