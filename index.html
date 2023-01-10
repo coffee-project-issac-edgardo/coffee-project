@@ -30,19 +30,19 @@
     <br>
     <h1>Add A Coffee</h1>
     <form>
-        <label> Roast</label>
-        <select class="form-select active" aria-label="Default select example">
+        <label for="add-coffee-roast-select"> Roast</label>
+        <select id="add-coffee-roast-select" class="form-select active" aria-label="Default select example">
             <option selected> light</option>
             <option value="1"> medium</option>
             <option value="2"> dark</option>
         </select>
 
         <div class="mb-3">
-            <label class="form-label new-coffee"> Coffee Name</label>
-            <input class="form-control new-coffee-roast-select" id="exampleFormControlInput1">
+            <label for="add-coffee-name" class="form-label new-coffee"> Coffee Name</label>
+            <input id="add-coffee-name" class="form-control new-coffee-roast-select">
         </div>
 
-        <button type="button" id="submit" class="btn btn-primary btn-md w-100"> Submit</button>
+        <button type="button" id="add-coffee" class="btn btn-primary btn-md w-100"> Submit</button>
 
     </form>
 
