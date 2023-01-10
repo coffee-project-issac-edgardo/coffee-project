@@ -43,6 +43,18 @@ function searchCoffees(value) {
     }
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
+function addCoffee() {
+    let coffee = {
+        name: '',
+        roast: '',
+    }
+};
+let newCoffee =document.getElementById('new-coffee').value;
+coffee.name = formatNewCoffee(newCoffee);
+coffee.roast = document.getElementById('new-coffee-roast-select').value;
+coffees.push(coffee);
+tbody.innerHTML = renderCoffees(coffees);
+}
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
