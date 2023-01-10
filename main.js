@@ -2,7 +2,7 @@
 
 function renderCoffee(coffee) {
     let html = '<div class="coffee">';
-    html += '<div class="coffee-name-font col-6"><h2>' + coffee.name;
+    html += '<div class="coffee-name-font"><h2>' + coffee.name;
     html += '<small class="coffee-roast-font">' + coffee.roast + '</small></h2></div>';
 
     return html;
@@ -30,7 +30,7 @@ function updateCoffees(e) {
                 filteredCoffees.push(coffee);
             }
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    body.innerHTML = renderCoffees(filteredCoffees);
 }
 
 function searchCoffees(value) {
@@ -41,7 +41,7 @@ function searchCoffees(value) {
         }
 
     }
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    body.innerHTML = renderCoffees(filteredCoffees);
 }
 function addCoffee() {
     let coffee = {
@@ -54,7 +54,7 @@ function addCoffee() {
     coffee.roast = document.getElementById('add-coffee-roast-select').value;
     coffees.push(coffee);
     arrangeCoffee()
-    tbody.innerHTML = renderCoffees(coffees);
+    body.innerHTML = renderCoffees(coffees);
 }
     function arrangeCoffee() {
     coffees.sort(function (a,b) {
@@ -88,12 +88,12 @@ let coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-let tbody = document.querySelector('#coffees');
+let body = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 let submitButton2 = document.querySelector('#add-coffee')
 
-tbody.innerHTML = renderCoffees(coffees);
+body.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 
