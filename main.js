@@ -2,9 +2,8 @@
 
 function renderCoffee(coffee) {
     let html = '<div class="coffee">';
-    html += '<p>' + coffee.name + '</p>';
-    html += '<p>' + coffee.roast + '</p>';
-    html += '</div>';
+    html += '<div class="coffee-name-font col-6"><h2>' + coffee.name;
+    html += '<small class="coffee-roast-font">' + coffee.roast + '</small></h2></div>';
 
     return html;
 }
@@ -18,17 +17,33 @@ function renderCoffees(coffees) {
 }
 
 function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
-    let selectedRoast = roastSelection.value;
-    console.log(selectedRoast);
-    let filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
-        }
+        // e.preventDefault(); // don't submit the form, we just want to update the data
+        let selectedRoast = roastSelection.value;
+        let filteredCoffees = [];
+
+        if(e === 'all') {
+            coffees.forEach(function (coffee) {
+                filteredCoffees.push(coffee);
+            })
+        } else coffees.forEach(function (coffee) {
+            if (coffee.roast === selectedRoast) {
+                filteredCoffees.push(coffee);
+            }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
+
+function searchCoffees(value) {
+    let filteredCoffees = [];
+    for (let i = 0; i < coffees.length; i++) {
+        if(coffees[i].name.toLowerCase().indexOf(value.toLowerCase()) >  -1) {
+            filteredCoffees.push(coffees[i]);
+        }
+
+    }
+    tbody.innerHTML = renderCoffees(filteredCoffees);
+}
+
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
@@ -55,3 +70,5 @@ let roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+
