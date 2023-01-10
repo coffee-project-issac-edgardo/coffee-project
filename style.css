@@ -3,3 +3,18 @@ h1 {
     display: flex;
     justify-content: center;
 }
+.coffee-name-font {
+    font-weight: bolder;
+    font-family: 'Bakbak One', cursive;
+
+}
+.coffee-roast-font {
+    font-weight: bolder;
+    font-family: 'Comfortaa', cursive;
+    margin-left: 5px;
+
+}
+.coffee {
+    display: flex;
+    justify-self: unset;
+}
