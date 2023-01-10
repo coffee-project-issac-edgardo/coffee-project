@@ -2,9 +2,9 @@
 
 function renderCoffee(coffee) {
     let html = '<div class="coffee">';
-    html += '<a>' + coffee.id + '</a>';
-    html += '<a>' + coffee.name + '</a>';
-    html += '<a>' + coffee.roast + '</a>';
+    html += '<p>' + coffee.id + '</p>';
+    html += '<p>' + coffee.name + '</p>';
+    html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
 
     return html;
@@ -32,23 +32,23 @@ function updateCoffees(e) {
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
-    {id: 1, name: 'Light City', roast: 'light'},
-    {id: 2, name: 'Half City', roast: 'light'},
-    {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
-    {id: 5, name: 'American', roast: 'medium'},
-    {id: 6, name: 'Breakfast', roast: 'medium'},
-    {id: 7, name: 'High', roast: 'dark'},
-    {id: 8, name: 'Continental', roast: 'dark'},
-    {id: 9, name: 'New Orleans', roast: 'dark'},
-    {id: 10, name: 'European', roast: 'dark'},
-    {id: 11, name: 'Espresso', roast: 'dark'},
-    {id: 12, name: 'Viennese', roast: 'dark'},
-    {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'},
+    { name: 'Light City', roast: 'light'},
+    { name: 'Half City', roast: 'light'},
+    { name: 'Cinnamon', roast: 'light'},
+    { name: 'City', roast: 'medium'},
+    { name: 'American', roast: 'medium'},
+    { name: 'Breakfast', roast: 'medium'},
+    { name: 'High', roast: 'dark'},
+    { name: 'Continental', roast: 'dark'},
+    { name: 'New Orleans', roast: 'dark'},
+    { name: 'European', roast: 'dark'},
+    { name: 'Espresso', roast: 'dark'},
+    { name: 'Viennese', roast: 'dark'},
+    { name: 'Italian', roast: 'dark'},
+    { name: 'French', roast: 'dark'},
 ];
 
-let tbody = document.querySelector('#coffees');let
+let tbody = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 
