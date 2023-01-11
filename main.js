@@ -1,9 +1,17 @@
 "use strict"
 
+// function renderCoffee(coffee) {
+//     let html = '<div class="coffee">';
+//     html += '<div class="coffee-name-font"><h2>' + coffee.name;
+//     html += '<small class="coffee-roast-font">' + coffee.roast + '</small></h2></div>';
+//
+//     return html;
+// }
+
 function renderCoffee(coffee) {
     let html = '<div class="coffee">';
-    html += '<div class="coffee-name-font"><h2>' + coffee.name;
-    html += '<small class="coffee-roast-font">' + coffee.roast + '</small></h2></div>';
+    html += '<h1 class="coffee-name-font">' + coffee.name + '<small class="coffee-roast-font">' + coffee.roast + '</small>' + '</h1>'
+
 
     return html;
 }
