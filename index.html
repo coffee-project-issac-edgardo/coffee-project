@@ -9,13 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Coffee!</h1>
+    <div class="wrapper">
+        <div class="bg"> Coffee </div>
+        <div class="fg"> Coffee </div>
+    </div>
     <hr>
 
     <div class="d-flex justify-content-around flex-wrap" id="coffees"></div>
 
-    <form>
-        <label for="roast-selection"> Roast</label>
+    <form class="w-75 text-center m-auto">
+        <label class="sub-header" for="roast-selection"> Roast</label>
         <select id="roast-selection" class="form-select active" aria-label="Default select example">
             <option value="all"> all</option>
             <option value="light"> light</option>
@@ -24,17 +27,20 @@
         </select>
 
         <div class="mb-3">
-            <label class="form-label"> Coffee Name</label>
+            <label class="form-label sub-header"> Coffee Name</label>
             <input class="form-control" id="text-submit" onkeyup="searchCoffees(value)">
         </div>
 
-        <button type="button" id="submit" class="btn btn-primary btn-md w-100"> Submit</button>
+        <button type="button" id="submit" class="btn btn-warning btn-md w-100"> Submit</button>
 
     </form>
     <br>
-    <h1>Add A Coffee</h1>
-    <form>
-        <label for="add-coffee-roast-select"> Roast</label>
+    <div class="wrapper">
+        <div class="bg"> Add A Coffee </div>
+        <div class="fg"> Add A Coffee </div>
+    </div>
+    <form class="w-75 text-center m-auto">
+        <label class="sub-header" for="add-coffee-roast-select"> Roast</label>
         <select id="add-coffee-roast-select" class="form-select active" aria-label="Default select example">
             <option value="light"> light</option>
             <option value="medium"> medium</option>
@@ -42,11 +48,11 @@
         </select>
 
         <div class="mb-3">
-            <label for="add-coffee-name" class="form-label new-coffee"> Coffee Name</label>
+            <label for="add-coffee-name" class="form-label new-coffee sub-header"> Coffee Name</label>
             <input id="add-coffee-name" class="form-control new-coffee-roast-select">
         </div>
 
-        <button type="button" id="add-coffee" class="btn btn-primary btn-md w-100"> Submit</button>
+        <button type="button" id="add-coffee" class="btn btn-warning btn-md w-100"> Submit</button>
 
     </form>
 
