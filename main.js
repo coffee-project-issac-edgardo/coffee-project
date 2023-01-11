@@ -110,17 +110,16 @@ let coffees = [
 
 
 let body = document.querySelector('#coffees');
-let submitButton = document.querySelector('#submit');
-let roastSelection = document.querySelector('#roast-selection');
-let submitButton2 = document.querySelector('#add-coffee');
-
-roastSelection.addEventListener('change', updateCoffees)
-
 body.innerHTML = renderCoffees(coffees);
 
-submitButton.addEventListener('click', updateCoffees);
+let submitButton = document.querySelector('#submit');
+let submitButton2 = document.querySelector('#add-coffee');
 
+submitButton.addEventListener('click', updateCoffees);
 submitButton2.addEventListener('click', addCoffee);
+
+let roastSelection = document.querySelector('#roast-selection');
+roastSelection.addEventListener('change', updateCoffees)
 
 document.getElementById("submit").value = " ";
 document.getElementById("add-coffee").value = " ";
