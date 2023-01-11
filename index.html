@@ -17,9 +17,10 @@
 
     <div class="d-flex justify-content-around flex-wrap" id="coffees"></div>
 
-    <form class="w-75 text-center m-auto">
-        <label class="sub-header" for="roast-selection"> Roast</label>
-        <select id="roast-selection" class="form-select active" aria-label="Default select example">
+    <form name="roastSelectionList" class="w-75 text-center m-auto">
+        <label class="sub-header"> Roast</label>
+
+        <select id="roast-selection" class="form-select active" aria-label="Default select example" onchange="renderCoffees()">
             <option value="all"> all</option>
             <option value="light"> light</option>
             <option value="medium"> medium</option>

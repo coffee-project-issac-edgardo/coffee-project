@@ -21,6 +21,20 @@ function renderCoffees(coffees) {
     return html;
 }
 
+// add to utilize list selector to display options
+// document.getElementById("roast-selection").onchange = function() {myCoffeeList()};
+// function myCoffeeList() {
+//     let coffeeList = document.getElementById("roast-selection");
+//     body.innerHTML = renderCoffees(coffeeList);
+// }
+
+// let coffeeList = document.getElementById("roast-selection");
+//     coffeeList.addEventListener("click", function() {
+//     document.getElementById("list-1");
+// });
+// coffeeList.addEventListener('selectionchange', updateCoffees);
+
+
 function updateCoffees(e) {
         // e.preventDefault(); // don't submit the form, we just want to update the data
         let selectedRoast = roastSelection.value;
@@ -48,6 +62,8 @@ function searchCoffees(value) {
     }
     body.innerHTML = renderCoffees(filteredCoffees);
 }
+
+
 function addCoffee() {
     let coffee = {
         name: '',
@@ -72,8 +88,7 @@ function addCoffee() {
     return input.replace(/\b\w/g, function (letter) {
         return letter.toUpperCase()
     })
-    }
-
+}
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
@@ -93,14 +108,22 @@ let coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+
 let body = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
-let submitButton2 = document.querySelector('#add-coffee')
+let submitButton2 = document.querySelector('#add-coffee');
+
+roastSelection.addEventListener('change', updateCoffees)
 
 body.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 
-submitButton2.addEventListener('click', addCoffee)
+submitButton2.addEventListener('click', addCoffee);
 
+document.getElementById("submit").value = " ";
+document.getElementById("add-coffee").value = " ";
+
+// let keyUpTextSubmit = document.getElementById('text-submit')
+// keyUpTextSubmit.addEventListener("keyup", searchCoffees)
