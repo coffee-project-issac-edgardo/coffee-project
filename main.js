@@ -26,7 +26,7 @@ function updateCoffees(e) {
         let selectedRoast = roastSelection.value;
         let filteredCoffees = [];
 
-        if(e === 'all') {
+        if(selectedRoast === 'all') {
             coffees.forEach(function (coffee) {
                 filteredCoffees.push(coffee);
             })
