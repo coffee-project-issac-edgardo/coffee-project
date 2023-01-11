@@ -9,11 +9,8 @@
 // }
 
 function renderCoffee(coffee) {
-    let html = '<div class="coffee">';
-    html += '<h1 class="coffee-name-font">' + coffee.name + '<small class="coffee-roast-font">' + coffee.roast + '</small>' + '</h1>'
 
-
-    return html;
+    return '<h3 class="coffee-name-font">' + coffee.name + '<small class="coffee-roast-font">' + coffee.roast + '</small>' + '</h3>';
 }
 
 function renderCoffees(coffees) {
