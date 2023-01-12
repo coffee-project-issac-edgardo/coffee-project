@@ -1,13 +1,5 @@
 "use strict"
 
-// function renderCoffee(coffee) {
-//     let html = '<div class="coffee">';
-//     html += '<div class="coffee-name-font"><h2>' + coffee.name;
-//     html += '<small class="coffee-roast-font">' + coffee.roast + '</small></h2></div>';
-//
-//     return html;
-// }
-
 function renderCoffee(coffee) {
 
     return '<h3 class="coffee-name-font">' + coffee.name + '<small class="coffee-roast-font">' + coffee.roast + '</small>' + '</h3>';
@@ -20,20 +12,6 @@ function renderCoffees(coffees) {
     }
     return html;
 }
-
-add to utilize list selector to display options
-document.getElementById("roast-selection").onchange = function() {myCoffeeList()};
-function myCoffeeList() {
-    let coffeeList = document.getElementById("roast-selection");
-    body.innerHTML = renderCoffees(coffeeList);
-}
-
-// let coffeeList = document.getElementById("roast-selection");
-//     coffeeList.addEventListener("click", function() {
-//     document.getElementById("list-1");
-// });
-// coffeeList.addEventListener('selectionchange', updateCoffees);
-
 
 function updateCoffees(e) {
         // e.preventDefault(); // don't submit the form, we just want to update the data
@@ -51,18 +29,19 @@ function updateCoffees(e) {
     });
     body.innerHTML = renderCoffees(filteredCoffees);
 }
-
 function searchCoffees(value) {
     let filteredCoffees = [];
     for (let i = 0; i < coffees.length; i++) {
         if(coffees[i].name.toLowerCase().indexOf(value.toLowerCase()) >  -1) {
             filteredCoffees.push(coffees[i]);
-        }
+        } else
+            if(coffees[i].roast.toLowerCase().indexOf(value.toLowerCase()) >  -1) {
+                filteredCoffees.push(coffees[i]);
+            }
 
     }
     body.innerHTML = renderCoffees(filteredCoffees);
 }
-
 
 function addCoffee() {
     let coffee = {
@@ -117,6 +96,6 @@ let roastSelection = document.querySelector('#roast-selection');
 submitButton.addEventListener('click', updateCoffees);
 submitButton2.addEventListener('click', addCoffee);
 
-// roastSelection.addEventListener('change', updateCoffees);
+// roastSelection.addEventListener('change', updateCoffees2);
 
 body.innerHTML = renderCoffees(coffees);

@@ -18,21 +18,24 @@
     <div class="d-flex justify-content-around flex-wrap" id="coffees"></div>
 
     <form name="roastSelectionList" class="w-75 text-center m-auto">
-        <label class="sub-header"> Roast</label>
-
-        <select id="roast-selection" class="form-select active" aria-label="Default select example" onchange="renderCoffees()">
-            <option value="all"> all</option>
-            <option value="light"> light</option>
-            <option value="medium"> medium</option>
-            <option value="dark"> dark</option>
-        </select>
 
         <div class="mb-3">
             <label class="form-label sub-header"> Coffee Name</label>
             <input class="form-control" id="text-submit" onkeyup="searchCoffees(value)">
         </div>
 
-        <button type="button" id="submit" class="btn btn-warning btn-md w-100"> Submit</button>
+        <label class="sub-header"> Roast</label>
+
+        <select id="roast-selection" class="form-select active" aria-label="Default select example" onchange="renderCoffees()">
+
+            <option value="all"> all</option>
+            <option value="light"> light</option>
+            <option value="medium"> medium</option>
+            <option value="dark"> dark</option>
+        </select>
+        <br>
+        <button type="reset" id="submit" class="btn btn-warning btn-md w-100"> Choose your Roast</button>
+        <br>
 
     </form>
     <br>
@@ -47,13 +50,13 @@
             <option value="medium"> medium</option>
             <option value="dark"> dark</option>
         </select>
-
+    <br>
         <div class="mb-3">
             <label for="add-coffee-name" class="form-label new-coffee sub-header"> Coffee Name</label>
             <input id="add-coffee-name" class="form-control new-coffee-roast-select">
         </div>
 
-        <button type="button" id="add-coffee" class="btn btn-warning btn-md w-100"> Submit</button>
+        <button type="button" id="add-coffee" class="btn btn-warning btn-md w-100"> Create your Joe</button>
 
     </form>
 
