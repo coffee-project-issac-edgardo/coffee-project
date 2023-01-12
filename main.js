@@ -21,12 +21,12 @@ function renderCoffees(coffees) {
     return html;
 }
 
-// add to utilize list selector to display options
-// document.getElementById("roast-selection").onchange = function() {myCoffeeList()};
-// function myCoffeeList() {
-//     let coffeeList = document.getElementById("roast-selection");
-//     body.innerHTML = renderCoffees(coffeeList);
-// }
+add to utilize list selector to display options
+document.getElementById("roast-selection").onchange = function() {myCoffeeList()};
+function myCoffeeList() {
+    let coffeeList = document.getElementById("roast-selection");
+    body.innerHTML = renderCoffees(coffeeList);
+}
 
 // let coffeeList = document.getElementById("roast-selection");
 //     coffeeList.addEventListener("click", function() {
@@ -70,7 +70,7 @@ function addCoffee() {
         roast: '',
     };
 
-    let newCoffee =document.getElementById('add-coffee-name').value;
+    let newCoffee = document.getElementById('add-coffee-name').value;
     coffee.name = formatNewCoffee(newCoffee);
     coffee.roast = document.getElementById('add-coffee-roast-select').value;
     coffees.push(coffee);
@@ -110,19 +110,13 @@ let coffees = [
 
 
 let body = document.querySelector('#coffees');
-body.innerHTML = renderCoffees(coffees);
-
 let submitButton = document.querySelector('#submit');
 let submitButton2 = document.querySelector('#add-coffee');
+let roastSelection = document.querySelector('#roast-selection');
 
 submitButton.addEventListener('click', updateCoffees);
 submitButton2.addEventListener('click', addCoffee);
 
-let roastSelection = document.querySelector('#roast-selection');
-roastSelection.addEventListener('change', updateCoffees)
+// roastSelection.addEventListener('change', updateCoffees);
 
-document.getElementById("submit").value = " ";
-document.getElementById("add-coffee").value = " ";
-
-// let keyUpTextSubmit = document.getElementById('text-submit')
-// keyUpTextSubmit.addEventListener("keyup", searchCoffees)
+body.innerHTML = renderCoffees(coffees);
